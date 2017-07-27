@@ -59,7 +59,7 @@
       <tbody>
           {% for client in all_clients %}
         <tr>
-            <td><a href="{%url 'show_page'  id=client.id%}">{{client.name}}{{client.id}}</a></td>
+            <td><a href="{%url 'show_page'  id=client.id%}">{{client.name}}</a></td>
             <td>{{client.email}}</td>
             <td>{{client.phone}}</td>
             <td><a href="{%url 'delete' id=client.id%}">Remove</a> | <a href="{%url 'edit' id=client.id%}">Edit</a></td>
