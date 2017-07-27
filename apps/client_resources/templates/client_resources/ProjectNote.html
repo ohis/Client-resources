@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+      <style>
+         .add_button{
+           text-align: right;
+         }
+         body{
+           background-color:  #cccccc;
+           height: 790%;
+
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+         }
+        </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="">
+          <h1 style="margin-top:40px">Update Project Note</h1>
+      </div>
+       <div class="">
+         <div class="col-10">
+           {% if messages %}
+               {% for message in messages %}
+                 <p class="error">{{message}}</p>
+               {% endfor %}
+             {% endif %}
+         </div>
+       </div>
+
+
+      <form class="" action="{%url 'update_proj_note' id=project.id%}" method="post">
+                 {% csrf_token %}
+
+          <div class="form-group row">
+            <label for="exampleTextarea" class="col-2">Notes:</label>
+            <div class="col-10">
+                <textarea class="form-control" name="notes" rows="6" placeholder="{{project.project_notes}}"></textarea>
+            </div>
+
+        </div>
+
+            <div class="add_button">
+              <button type="submit" class="btn btn-primary">Add Project</button>
+            </div>
+
+      </form>
+      <form class="" action="{%url 'show_page'  id=project.client.id%}" method="post">
+           {% csrf_token %}
+         <button type="submit" class="btn btn-primary">Cancel</button>
+       </form>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+      <style>
+        .h1,h1{
+          font-size: 250%;
+          margin-top:50px;
+          margin-bottom: 40px;
+          text-align: center;
+
+        }
+        .add_client{
+          text-align:  center;
+          margin-bottom: 20px;
+
+        }
+        .description,p{
+          font-size: 200%;
+          font-style: italic;
+        }
+        body{
+          background: url("{%static 'img/crm3.jpeg' %}") no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size:cover;
+          -o-background-size: cover;
+          background-size: cover;
+
+        }
+      /*body{
+          background-image: url("{%static 'img/crm2.jpeg' %}");
+
+
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          /*background-size: cover;*/
+
+      /*  }  */
+
+        /*.bg{
+          background-image: url("{%static 'img/crm2.jpeg' %}");
+
+           width:100%;
+           height: 400px;
+             background-size: 100% 100%;
+        /*  background-position: center;*/
+          /*background-repeat: no-repeat;*/
+
+          /*background-size: cover;*/
+
+        /*}*/
+      </style>
+
+  </head>
+  <!--  <div class="bg">-->
+  <body>
+    <div class="container">
+      <div class="h1">
+          <h1>Welcome to Client Resources</h1>
+      </div>
+      <div class="descripton">
+        <p>Client resources is a web application that
+          allows a user to track clients and their projects.
+          The user can add information about the company and any relevant notes.</p>
+      </div>
+      <form class="add_client" action="/main" method="post">
+        {% csrf_token %}
+        <!--<input type="submit" name="" value="Add a client">-->
+        <button type="submit" class="btn btn-primary">Get Started</button>
+      </form>
+
+
+    </div>
+
+  </body>
+    <!--  </div>-->
+</html>
